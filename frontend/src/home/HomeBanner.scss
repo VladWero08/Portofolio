@@ -1,0 +1,109 @@
+@import "../style.scss";
+
+$blub-measure: 50px;
+
+.home-banner{
+    display: grid;
+    grid-template-columns: 10vw 20vw 20vw 20vw 20vw 10vw;
+    background: $dark-purple;
+    padding: $l-padding;
+}
+
+.message{
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: 'Rubik Scribble', serif;
+    color: $ghost-white;
+}
+
+.message-pink{ color: $cerise; }
+
+.blobs{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    position: relative;
+    height: calc($blub-measure * 8); 
+    width: calc($blub-measure * 8);
+}
+
+// Big blobs
+
+.blob{
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    height: calc($blub-measure * 5);
+    transition: all 1s ease-in-out;
+    width: calc($blub-measure * 5);
+}
+
+.blob-dark{ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: morph 8s ease-in-out infinite;
+    background: linear-gradient(135deg, $byzantium 0%, $cerise 100%); 
+
+}
+
+.blob-bright{ 
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: morph-reversed 8s ease-in-out infinite;
+    background: linear-gradient(45deg, $byzantium 0%, $cerise 100%); 
+}
+
+// Small blobs
+
+.miniblob-purple{
+    height: calc($blub-measure * 2);
+    width: calc($blub-measure * 2);
+
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    animation: morph 8s ease-in-out infinite;
+    background: $byzantium;
+}
+
+.miniblob-pink{
+    height: calc($blub-measure * 2.5);
+    width: calc($blub-measure * 2.5);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: morph-reversed 8s ease-in-out infinite;
+    background: $cerise;
+}
+
+@keyframes morph {
+    0% { border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%; } 
+    50% { border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%; } 
+}
+
+@keyframes morph-reversed {
+    0% { border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%; } 
+    50% { border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%; }   
+}
+
+.home-profile-image{
+    height: calc($blub-measure * 5);
+    width: calc($blub-measure * 5);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    border-radius: 50%;
+    z-index: 5;
+}

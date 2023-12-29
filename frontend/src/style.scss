@@ -1,0 +1,21 @@
+$black: rgba(0, 0, 0, 1);
+$dark-purple: rgba(61, 38, 69, 1);
+$byzantium: rgba(131, 33, 97, 1);
+$cerise: rgba(218, 65, 103, 1);
+$ghost-white: rgba(240, 239, 244, 1);
+
+$padding: 8px;
+$s-padding: calc(2 * $padding);
+$m-padding: calc(4 * $padding);
+$l-padding: calc(8 * $padding); 
+$xl-padding: calc(16 * $padding);
+
+body{
+    background: $dark-purple;
+    font-family: 'Raleway', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.big-title{ font-size: $l-padding; }
+.small-title{ font-size: $m-padding;}

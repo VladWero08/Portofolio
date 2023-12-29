@@ -1,0 +1,32 @@
+@import '../style.scss';
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    background: $dark-purple;
+
+    font-weight: 700;
+    padding: $m-padding;
+}
+
+.navbar-logo{ flex: 1; }
+.navbar-logo-image{
+    width: 200px;
+    height: auto;
+}
+
+
+.navbar-links{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.navbar-link{
+    color: $ghost-white;
+    text-transform: uppercase;
+    margin-right: $m-padding;
+}
