@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 
-import "./HomeBanner.scss"
-import profile_image from "../images/villy-profile.jpg"
+import "./Home.scss"
+import profile_image from "../assets/images/villy-profile.jpg"
 
 function HomeBanner(){
     return (
@@ -29,17 +29,18 @@ function HomeBanner(){
                             fontWeight: 700,
                             letterSpacing: '2px',
                             marginRight: '8px',
-                            backgroundColor: "rgba(131, 33, 97, 1)",
+                            backgroundColor: "rgba(146, 180, 167, 1)",
                         }}
                     >Projects</Button>
                     <Button 
                         variant="outlined"
+                        className='btn-contact'
                         style={{
                             fontFamily: 'Raleway',
                             fontWeight: 700,
                             letterSpacing: '2px',
-                            color: "rgba(131, 33, 97, 1)",
-                            border: "2px solid rgba(131, 33, 97, 1)"
+                            color: "rgba(146, 180, 167, 1)",
+                            border: "2px solid rgba(146, 180, 167, 1)"
                         }}
                     >Contact</Button>
                 </div>

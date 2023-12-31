@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import "./Navbar.scss";
 
-import logo from "../images/logo.png";
+import logo from "../assets/images/logo.png";
 
 function Navbar() {
     return(
@@ -12,10 +13,10 @@ function Navbar() {
                     alt="logo"/>
             </div>
             <div className="navbar-links">
-                <div className="navbar-link">Home</div>
-                <div className="navbar-link">Projects</div>
-                <div className="navbar-link">About</div>
-                <div className="navbar-link">Contact</div>
+                <Link to="/" className="navbar-link">Home</Link>
+                <Link to="/projects" className="navbar-link">Projects</Link>
+                <Link to="/about" className="navbar-link">About</Link>
+                <Link to="/contact" className="navbar-link">Contact</Link>
             </div>
         </div>
     )

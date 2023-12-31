@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-evenly;
     
-    background: $dark-purple;
+    background: $jet;
 
     font-weight: 700;
     padding: $m-padding;
@@ -28,5 +28,6 @@
 .navbar-link{
     color: $ghost-white;
     text-transform: uppercase;
+    text-decoration: none;
     margin-right: $m-padding;
 }
