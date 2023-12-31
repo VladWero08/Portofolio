@@ -25,3 +25,11 @@ body{
 
 .big-title{ font-size: $l-padding; }
 .small-title{ font-size: $m-padding;}
+
+.big-special-title{
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Rubik Scribble', serif;
+    color: $sage;   
+    letter-spacing: 2px;
+}
