@@ -1,0 +1,60 @@
+@import "../style.scss";
+
+.timeline__wrapper{ display: flex; }
+.timeline__display{ flex: 2; }
+
+.timeline__type{ 
+    flex: 1;
+    color: $cream;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
+    font-family: $second-font-family;
+    font-size: 48px;
+
+    text-shadow: 0 2px 1px $sage, 
+        -1px 3px 1px $sage;
+
+    padding: $s-padding;
+}
+
+.timeline-date__title{
+    font-family: $main-font-family;
+    font-weight: 700;
+    color: $cinereous;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.timeline-job__title{
+    font-family: $main-font-family;
+    font-weight: 700;
+    color: $cream;
+}
+
+.timeline-job__subtitle{
+    font-family: $main-font-family;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $gray;
+}
+
+.timeline-job__description{
+    padding: $s-padding 0;
+    color: $sage;
+}
+
+.timeline-job__description-professional{ color: $jet; }
+
+.arrow{
+    font-family: $second-font-family;
+    font-weight: 700;
+}
+
+.timeline__academical{
+    background: $cambridge-blue;
+}

@@ -9,6 +9,7 @@ $cream: rgba(243, 249, 210, 1);
 $sage: rgba(189, 196, 167, 1);
 $jet: rgba(47, 47, 47, 1);
 $cambridge-blue: rgba(146, 180, 167, 1);
+$gray: rgb(143, 142, 142);
 
 $xs-padding: 8px;
 $s-padding: calc(2 * $xs-padding);
@@ -16,11 +17,34 @@ $m-padding: calc(4 * $xs-padding);
 $l-padding: calc(8 * $xs-padding); 
 $xl-padding: calc(16 * $xs-padding);
 
+$main-font-family: 'Raleway', serif;
+$second-font-family: 'Rubik Scribble', serif;
+
 body{
     background: $jet;
-    font-family: 'Raleway', serif;
+    font-family: $main-font-family;
     margin: 0;
     padding: 0;
+    line-height: 1.5;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
 }
 
 .big-title{ font-size: $l-padding; }
@@ -29,7 +53,7 @@ body{
 .big-special-title{
     font-size: 48px;
     font-weight: 700;
-    font-family: 'Rubik Scribble', serif;
+    font-family: $second-font-family;
     color: $sage;   
     letter-spacing: 2px;
 }
