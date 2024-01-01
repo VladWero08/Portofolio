@@ -1,0 +1,46 @@
+@import "../style.scss";
+
+$traingle-height: 5px;
+$copy-message-width: 64px;
+
+.social-media-icon__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.clipboard-wrapper{
+    position: relative;
+    background: $cambridge-blue;
+    color: $jet;
+    width: $copy-message-width;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 12px;
+
+    margin-bottom: $s-padding;
+    padding: calc($xs-padding / 2);
+
+    transition: opacity 0.2s linear;
+}
+
+.clipboard-wrapper::after{
+    content: "";
+    position: absolute;
+    bottom: calc(-0.9 * ($xs-padding / 2 + $traingle-height ));
+    left: calc(copy-message-width / 2);
+
+    border-left: $traingle-height solid transparent;
+    border-right: $traingle-height solid transparent;
+    border-top: calc($traingle-height * 1.8) solid $cambridge-blue;
+}
+
+.clipboard-wrapper:hover{ cursor: pointer; }
+
+.clipboard__invisible{ opacity: 0; }
+.clipboard__visible{ opacity: 1; }

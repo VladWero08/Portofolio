@@ -53,25 +53,26 @@
 }
 
 .circles{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-
-.circles-reversed{
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
 
     display: flex;
-    justify-content: flex-end;
     align-items: flex-start;
+    justify-content: flex-start;
 }
 
-.circles img,
-.circles-reversed img{
-    width: 100px;
-    height: 100x;
+.circles-reversed{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
+
+.icon__normal{ width: 100px; height: 100px; }
+.icon__small{ width: 75px; height: 75px; }

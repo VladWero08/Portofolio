@@ -10,11 +10,11 @@ $sage: rgba(189, 196, 167, 1);
 $jet: rgba(47, 47, 47, 1);
 $cambridge-blue: rgba(146, 180, 167, 1);
 
-$padding: 8px;
-$s-padding: calc(2 * $padding);
-$m-padding: calc(4 * $padding);
-$l-padding: calc(8 * $padding); 
-$xl-padding: calc(16 * $padding);
+$xs-padding: 8px;
+$s-padding: calc(2 * $xs-padding);
+$m-padding: calc(4 * $xs-padding);
+$l-padding: calc(8 * $xs-padding); 
+$xl-padding: calc(16 * $xs-padding);
 
 body{
     background: $jet;
