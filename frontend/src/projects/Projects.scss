@@ -9,6 +9,10 @@
 }
 
 .project__sinister-escape { 
+    background-image: 
+        linear-gradient(to top, transparent -50%, black 100%), 
+        url("../assets/images/sinister-escape-logo.png");
+    background-position: center;
     grid-column-start: 1; 
     grid-column-end: 3; 
     grid-row-start: 1; 
@@ -23,6 +27,13 @@
 }
 
 .project__networkeen { 
+    background-image: 
+        linear-gradient(to top, transparent -50%, black 100%), 
+        url("../assets/images/networkeen-logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     grid-column-start: 3; 
     grid-column-end: 5; 
     grid-row-start: 1; 
@@ -30,6 +41,13 @@
 }
 
 .project__sparrow { 
+    background-image: 
+        linear-gradient(to top, transparent -50%, black 100%), 
+        url("../assets/images/sparrow-logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
     grid-column-start: 3; 
     grid-column-end: 5; 
     grid-row-start: 3; 
@@ -41,19 +59,16 @@
     grid-column-end: 7; 
     grid-row-start: 1; 
     grid-row-end: 2; 
-
-    background-color:#ff99df;
-    background-image:
-    radial-gradient(at 17% 90%, hsla(278,76%,75%,1) 0px, transparent 50%),
-    radial-gradient(at 93% 26%, hsla(326,87%,68%,1) 0px, transparent 50%),
-    radial-gradient(at 86% 0%, hsla(63,93%,78%,1) 0px, transparent 50%),
-    radial-gradient(at 30% 44%, hsla(326,86%,61%,1) 0px, transparent 50%),
-    radial-gradient(at 38% 91%, hsla(232,89%,62%,1) 0px, transparent 50%),
-    radial-gradient(at 56% 60%, hsla(51,85%,63%,1) 0px, transparent 50%),
-    radial-gradient(at 41% 75%, hsla(89,77%,61%,1) 0px, transparent 50%);
 }
 
 .project__procfs { 
+    background-image: 
+        linear-gradient(to top, transparent -50%, black 100%), 
+        url("../assets/images/procfs-logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+
     grid-column-start: 5; 
     grid-column-end: 7; 
     grid-row-start: 2; 
@@ -70,7 +85,6 @@
 
 
 .project{
-    background: linear-gradient(to top, transparent 0%, transparent 35%, black 100%);
     padding: $s-padding;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, 
