@@ -2,37 +2,40 @@ import CircularProgress from '@mui/joy/CircularProgress';
 
 import "./Skills.scss";
 
+import react from "../assets/images/react.png";
+import cpp from "../assets/images/cpp.png";
+import python from "../assets/images/python.png";
+import java from "../assets/images/java.png";
+import arduino from "../assets/images/arduino.png";
+
+
 function Skills() {
     const skills = [
         {
-            language: "C/C++",
+            language: cpp,
             percentage: 70,
         },
         {
-            language: "Python",
+            language: python,
             percentage: 85,
         },
         {
-            language: "Java",
+            language: java,
             percentage: 65,
         },
         {
-            language: "React",
+            language: react,
             percentage: 50,
         },
         {
-            language: "Django",
+            language: arduino,
             percentage: 75,
-        },
-        {
-            language: "FastAPI",
-            percentage: 85,
         },
     ]
 
     const renderedSkills = skills.map(skill => 
             <div className="skill">
-                <h3>{skill.language}</h3>
+                <img src={skill.language} alt="programming_language" />
                 <CircularProgress 
                     color="neutral" 
                     size="lg" 
@@ -53,6 +56,9 @@ function Skills() {
                 <p>
                     Adept at crafting robust and scalable solutions, I bring a keen problem-solving mindset to every project. 
                     Driven by a passion for continuous learning and technology advancement.
+                    <br />
+                    <br />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit corporis eaque vero, earum vel deserunt minima, quas voluptates eveniet labore repellendus, dolorem autem id. Quae eos fuga in laboriosam dignissimos.
                 </p>
             </div>
             <div className="skills">

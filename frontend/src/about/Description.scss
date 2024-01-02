@@ -1,1 +1,31 @@
 @import "../style.scss";
+
+.descritpion__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: $l-padding;
+    padding-bottom: 0;
+}
+
+.description__title,
+.description__text{ flex: 1; }
+
+.description__title h1 { 
+    margin-bottom: $s-padding;
+    font-family: $second-font-family;
+    font-size: 48px;
+    color: $cream;
+}
+.description__title p { 
+    font-family: $main-font-family;
+    font-size: 20px;
+    color: $sage;
+}
+
+.description__text{ padding: $l-padding $s-padding; }
+.description__text img {
+    width: 80%;
+    height: auto;
+}
