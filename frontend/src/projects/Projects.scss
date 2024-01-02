@@ -1,0 +1,112 @@
+@import '../style.scss';
+
+.projects__wrapper{
+    display: grid;
+    grid-template-columns: repeat(6, 15vw);
+    grid-template-rows: repeat(4, 15vh);
+    grid-gap: $s-padding;
+    padding: $m-padding;
+}
+
+.project__sinister-escape { 
+    grid-column-start: 1; 
+    grid-column-end: 3; 
+    grid-row-start: 1; 
+    grid-row-end: 4; 
+}
+
+.project__disbotify { 
+    grid-column-start: 1; 
+    grid-column-end: 3; 
+    grid-row-start: 4; 
+    grid-row-end: 5; 
+}
+
+.project__networkeen { 
+    grid-column-start: 3; 
+    grid-column-end: 5; 
+    grid-row-start: 1; 
+    grid-row-end: 3; 
+}
+
+.project__sparrow { 
+    grid-column-start: 3; 
+    grid-column-end: 5; 
+    grid-row-start: 3; 
+    grid-row-end: 5; 
+}
+
+.project__brainanomaly { 
+    grid-column-start: 5; 
+    grid-column-end: 7; 
+    grid-row-start: 1; 
+    grid-row-end: 2; 
+
+    background-color:#ff99df;
+    background-image:
+    radial-gradient(at 17% 90%, hsla(278,76%,75%,1) 0px, transparent 50%),
+    radial-gradient(at 93% 26%, hsla(326,87%,68%,1) 0px, transparent 50%),
+    radial-gradient(at 86% 0%, hsla(63,93%,78%,1) 0px, transparent 50%),
+    radial-gradient(at 30% 44%, hsla(326,86%,61%,1) 0px, transparent 50%),
+    radial-gradient(at 38% 91%, hsla(232,89%,62%,1) 0px, transparent 50%),
+    radial-gradient(at 56% 60%, hsla(51,85%,63%,1) 0px, transparent 50%),
+    radial-gradient(at 41% 75%, hsla(89,77%,61%,1) 0px, transparent 50%);
+}
+
+.project__procfs { 
+    grid-column-start: 5; 
+    grid-column-end: 7; 
+    grid-row-start: 2; 
+    grid-row-end: 4; 
+}
+
+.project__robotics { 
+    grid-column-start: 5; 
+    grid-column-end: 7; 
+    grid-row-start: 4; 
+    grid-row-end: 5; 
+}
+
+
+
+.project{
+    background: linear-gradient(to top, transparent 0%, transparent 35%, black 100%);
+    padding: $s-padding;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, 
+        rgba(0, 0, 0, 0.07) 0px 2px 4px, 
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, 
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, 
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, 
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.project__title{
+    color: $cream;
+    font-size: 24px;
+    font-family: $main-font-family;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.project__subtitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project__subtitle img{ height: 24px; width: 24px;}
+.project__subtitle h4{
+    color: $cambridge-blue;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.project__small{
+    background: none;
+    background-color: $cinereous;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
