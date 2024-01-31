@@ -12,8 +12,10 @@ function Description() {
                 <h1>About me</h1>
                 <div className="line"></div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia deleniti fugiat quam laborum, libero facere hic rem assumenda, consectetur sapiente rerum ad! Accusamus perspiciatis numquam facilis doloribus, dolores obcaecati? Veniam!<br></br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus a quis, accusantium quod ratione vero?
+                    Hello, my name is Olaeriu Vlad and I'm a final-year Computer Science student who's into coding, volleyball, and sports in general. 🏐 
+                    I used to play volleyball during middle and high school, and I still love to do it. <br/><br></br>
+                    Besides tech stuff, I love drawing and jamming to music. ✏️🎶 Because I love drawing, I have
+                    a little passion for graphic design, I usually build logos or design small sections of websites.
                 </p>
             </div>
         </div>

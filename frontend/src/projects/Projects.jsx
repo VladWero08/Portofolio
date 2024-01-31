@@ -1,7 +1,5 @@
 import "./Projects.scss";
 
-import github_icon from "../assets/images/github.png";
-
 function Projects(){
     const projects = [
         {
@@ -31,7 +29,7 @@ function Projects(){
         },
         {
             name: "ProcFS",
-            technologies: "C, Libfusr",
+            technologies: "C, Libfuse",
             project_class: "project project__procfs",
         },
         {
@@ -46,7 +44,6 @@ function Projects(){
             <div className="project__title">{project.name}</div>
             <div className="project__subtitle">
                 <h4>{project.technologies}</h4>
-                <img src={github_icon} alt="github"/>
             </div>  
         </div>
     )

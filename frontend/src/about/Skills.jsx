@@ -58,7 +58,8 @@ function Skills() {
                     Driven by a passion for continuous learning and technology advancement.
                     <br />
                     <br />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit corporis eaque vero, earum vel deserunt minima, quas voluptates eveniet labore repellendus, dolorem autem id. Quae eos fuga in laboriosam dignissimos.
+                    Enthusiastically seeking to deepen my knowledge in <strong>mathematics for machine learning</strong>, 
+                    delve into <strong>programming with Rust</strong>, and enhance my overall <strong>understanding of computers</strong>. 
                 </p>
             </div>
             <div className="skills">

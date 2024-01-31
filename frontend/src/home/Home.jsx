@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
 
 import "./Home.scss"
@@ -31,10 +32,11 @@ function HomeBanner(){
                             marginRight: '8px',
                             backgroundColor: "rgba(146, 180, 167, 1)",
                         }}
-                    >Projects</Button>
+                    >
+                        <Link to="/projects" className="home-link">Projects</Link>
+                    </Button>
                     <Button 
                         variant="outlined"
-                        className='btn-contact'
                         style={{
                             fontFamily: 'Raleway',
                             fontWeight: 700,
@@ -42,7 +44,9 @@ function HomeBanner(){
                             color: "rgba(146, 180, 167, 1)",
                             border: "2px solid rgba(146, 180, 167, 1)"
                         }}
-                    >Contact</Button>
+                    >
+                        <Link to="/contact" className="home-link">Contact</Link>
+                    </Button>
                 </div>
 
             </div>

@@ -19,9 +19,9 @@ function TimelineAcademical(){
             title: "National College 'Gheorghe Vrănceanu', Bacău",
             subtitle: "Mathematics and Computer Science",
             description: [
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, sed.",
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, sed.",
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, sed."
+                "I passed my baccalaureate exam with 9.55.",
+                "I played volleybal for the local team from Bacau at junior, as well as senior level.",
+                "I was a volunteer during every summer at Oratoriu Don Bosco, the activity being called `Vara Impreuna`."
             ],
         }, 
         {
@@ -29,9 +29,8 @@ function TimelineAcademical(){
             title: "University of Bucharest",
             subtitle: "Faculty of Mathematics and Computer Science",
             description: [
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, sed.",
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, sed.",
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, sed."
+                "I discovered my deep passion for computer science.",
+                "I continued on playing sports, such as football, volleyball and tennis.",
             ],
         }
     ]
