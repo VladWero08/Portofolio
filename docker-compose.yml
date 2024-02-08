@@ -1,0 +1,54 @@
+version: "3.8"
+
+services: 
+  # database MariaDB container
+  mariadb:
+    container_name: mariadb_container
+    image: mariadb
+    volumes:
+      - ./mariadb/mariadb:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER_NAME}
+      MYSQL_PASSWORD: ${DB_USER_PASS}
+    restart: unless-stopped
+    networks:
+      portofolio:
+        ipv4_address: ${MARIADB_IPV4}
+
+  # backend FastAPI container
+  backend_server:
+    container_name: backend_container
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      portofolio:
+        ipv4_address: ${BACKEND_IPV4}
+
+  # frontend React container
+  frontend_server:
+    container_name: frontend_container
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/src/:/src/src
+      - ./frontend/node_modules:/src/node_modules
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      portofolio:
+        ipv4_address: ${FRONTEND_IPV4}
+
+networks:
+  portofolio:
+    ipam:
+      driver: default
+      config: 
+        - subnet: ${SUBNET}
+          gateway: ${GATEWAY}
