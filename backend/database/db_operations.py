@@ -1,5 +1,5 @@
 import bcrypt
-from db_models import Users
+from database.db_models import Users
 from sqlalchemy.orm import Session, sessionmaker
 
 def create_user(session: Session, user_name: str, password: str) -> bool:
