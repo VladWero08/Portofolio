@@ -1,4 +1,4 @@
-FROM python:3.12-slim-bookworm
+FROM python:3.12.2-bookworm
 
 ARG SOURCE=/src
 
@@ -9,10 +9,16 @@ COPY . ${SOURCE}
 WORKDIR ${SOURCE}
 
 RUN apt-get update -y \
-    && apt-get upgrade -y
+    && apt-get upgrade -y \
+    && apt-get install -y libmariadb3 libmariadb-dev
 
 # install python packages
 RUN pip install -r ${SOURCE}/requirements.txt
+
+RUN pip install mariadb
+RUN pip install sqlalchemy
+RUN pip install python-dotenv
+RUN pip install bcrypt
 
 # expose the port
 EXPOSE 8000

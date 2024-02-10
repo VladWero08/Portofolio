@@ -13,6 +13,8 @@ services:
       MYSQL_USER: ${DB_USER_NAME}
       MYSQL_PASSWORD: ${DB_USER_PASS}
     restart: unless-stopped
+    ports:
+    - "3306:3306"
     networks:
       portofolio:
         ipv4_address: ${MARIADB_IPV4}
@@ -23,6 +25,8 @@ services:
     build: 
       context: ./backend
       dockerfile: Dockerfile
+    volumes:
+      - ./backend:/src
     ports:
       - "8000:8000"
     networks:
