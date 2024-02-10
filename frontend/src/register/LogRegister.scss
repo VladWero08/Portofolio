@@ -1,0 +1,38 @@
+@import '../style.scss';
+
+.log-register__wrapper {
+    color: $jet;
+    display: flex;
+    flex-direction: column;
+    padding: $m-padding $l-padding;    
+}
+
+.log-register__title {
+    color: $sage;
+    font-size: 48px;
+    font-weight: 800;
+    font-family: $second-font-family;
+    letter-spacing: 2px;
+}
+
+.log-register__description {  
+    max-width: 50vw; 
+    color: $ghost-white;
+}
+
+.log-register__form {
+    padding: $m-padding 0;
+    display: flex;
+    flex-direction: column;
+    gap: $s-padding;
+    max-width: 50vw;
+}
+
+.log-register__link {
+    color: $cambridge-blue;
+}
+
+.btn-submit {
+    max-width: 5vw;
+    height: 32px;
+}

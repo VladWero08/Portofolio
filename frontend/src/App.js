@@ -1,6 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./navigation/Navbar";
+import { CookieProvider } from "./Cookie";
+import ProtectedRoute from "./navigation/ProtectedRoute.jsx";
+
+import Navbar from "./navigation/Navbar.jsx";
+import LogIn from "./register/LogIn.jsx";
+import Register from "./register/Register.jsx";
 
 import Home from "./home/Home.jsx";
 import Contact from "./contact/Contact.jsx";
@@ -9,18 +14,27 @@ import About from "./about/About.jsx";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Navbar/>
+    <CookieProvider>
+      <div>
+        <BrowserRouter>
+          <Navbar/>
 
-        <Routes>
-          <Route index element={<Home/>}/>
-          <Route path="/projects" element={<Projects/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-        </Routes>
-      </BrowserRouter>
-    </div>
+          <Routes>
+            <Route index element={<Home/>}/>
+            <Route 
+              path="/projects" 
+              element={
+                <ProtectedRoute Component={Projects}></ProtectedRoute>
+              }
+            />
+            <Route path="/about" element={<About/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/log-in" element={<LogIn/>}/>
+            <Route path="/register" element={<Register/>}/>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </CookieProvider>
   );
 }
 

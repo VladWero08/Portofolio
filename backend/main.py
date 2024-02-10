@@ -4,13 +4,21 @@ from datetime import date, timedelta
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, Form, HTTPException, status
-from fastapi.responses import JSONResponse
+from fastapi.responses import Response, JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from database.db_conn import get_engine, get_session
 from database.db_models import init_models
 from database.db_operations import create_user, find_user
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # load the environment variables
 load_dotenv()
@@ -41,15 +49,15 @@ async def users_create(username: str, password: str):
         user_was_created = create_user(session, username, password)
 
         if user_was_created:
-            return HTTPException(
+            return Response(
                 status_code=status.HTTP_201_CREATED
             )
         else:
-            return HTTPException(
+            return Response(
                 status_code=status.HTTP_409_CONFLICT
             )
     except Exception as e:
-        return HTTPException(
+        return Response(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
@@ -63,40 +71,37 @@ def set_cookie(user_name: str):
     }
 
 @app.post("/users/login")
-async def users_login(user_name: str = Form(...), password: str = Form(...)):
+async def users_login(username: str, password: str):
     try:
         session = get_session(engine)
 
         # check if the user exists in the database
-        if find_user(session, user_name, password) is False:
-            return HTTPException(
+        if find_user(session, username, password) is False:
+            return JSONResponse(
                 status_code=status.HTTP_404_NOT_FOUND, 
             )
 
-        set_cookie(user_name)
-        response = JSONResponse(content="Succesfully logged in!")
+        set_cookie(username)
+
+        response = JSONResponse(content={
+            "cookie": cookies[username]["cookie"]
+        })
         response.status_code = status.HTTP_202_ACCEPTED
-        response.set_cookie(
-            key=cookies[user_name]["cookie"], 
-            value=user_name,
-            expires=cookies[user_name]["expiration"]
-        )
 
         return response
     except Exception as e:
         print(e)
-        return HTTPException(
+        return JSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, 
-            detail="Internal server error!"
         )
     
 @app.get("/users/is_logged")
 async def user_is_logged(cookie: str, user_name: str):
     if user_name in cookies and cookies[user_name]["cookie"] == cookie:
-        return HTTPException(
+        return Response(
             status_code=status.HTTP_200_OK
         )
     else:
-        return HTTPException(
+        return Response(
             status_code=status.HTTP_401_UNAUTHORIZED
         )

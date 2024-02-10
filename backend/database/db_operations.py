@@ -8,6 +8,7 @@ def create_user(session: Session, user_name: str, password: str) -> bool:
     in the database.
     """
     user = session.query(Users).filter_by(user_name=user_name).first()
+    print(user)
 
     if user is not None:
         return False
