@@ -78,6 +78,7 @@ async def users_login(username: str, password: str):
         # check if the user exists in the database
         if find_user(session, username, password) is False:
             return JSONResponse(
+                content={},
                 status_code=status.HTTP_404_NOT_FOUND, 
             )
 
@@ -92,6 +93,7 @@ async def users_login(username: str, password: str):
     except Exception as e:
         print(e)
         return JSONResponse(
+            content={},
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, 
         )
     

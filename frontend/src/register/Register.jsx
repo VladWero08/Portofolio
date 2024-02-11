@@ -1,23 +1,42 @@
 import { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+
+import Snackbar from '@mui/material/Snackbar';
+import Alert from "@mui/material/Alert";
+import AlertTitle from '@mui/material/AlertTitle';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
     const navigate = useNavigate();
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
+    const [openAlert, setOpenAlert] = useState(false);
 
+    // function to handle the change in the user input
     const handleUserNameChange = (event) => {
         setUsername(event.target.value);
     }
 
+    // function to handle the change in the password input
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
     }
 
+    // functio to handle when an alert is closed
+    const handleCloseAlert = () => {
+        setOpenAlert(false);
+    }
+
     const handleSubmit = async (event) => {
+        // do not let the page reload when the user
+        // presses the submit button
         event.preventDefault();
+
+        if (username === null || password === null) {
+            setOpenAlert(true);
+            return;
+        }
 
         const apiURL = `http://127.0.0.1:8000/users/create?username=${username}&password=${password}`
 
@@ -29,8 +48,7 @@ function Register() {
                 }
                 // otherwise, let the user know an error occured
                 else {
-                    alert("Register failed. Please try again.");
-                    setPassword(null);
+                    setOpenAlert(true);
                 }
             }).catch(error => {
                 console.error('Error occurred during API request:', error.message);
@@ -46,12 +64,39 @@ function Register() {
                 Dive into the depths of project details, explore its features, and embark on a journey filled with innovation and possibilities.
                 </div>
 
+                <Snackbar
+                    open={openAlert}
+                    autoHideDuration={5000} 
+                    onClose={handleCloseAlert}
+                    anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
+                    }}
+                >
+                    <Alert
+                        onClose={handleCloseAlert}
+                        severity="error" 
+                    >
+                        <AlertTitle>Registration failed. Please try again.</AlertTitle>
+                    </Alert>
+                </Snackbar>
+
                 <form action="POST" className="log-register__form" onSubmit={handleSubmit}>
                     <TextField 
                         id="outlined-basic" 
                         label="Username" 
                         variant="outlined" 
                         onChange={handleUserNameChange}
+                        InputLabelProps={{
+                            style: {
+                                color: "rgba(240, 239, 244, 1)",
+                            }
+                        }}
+                        InputProps={{
+                            style: {
+                                color: "rgba(240, 239, 244, 1)",
+                            }
+                        }}
                     />
                     
                     <TextField 
@@ -60,6 +105,16 @@ function Register() {
                         label="Password" 
                         variant="outlined"
                         onChange={handlePasswordChange}
+                        InputLabelProps={{
+                            style: {
+                                color: "rgba(240, 239, 244, 1)",
+                            }
+                        }}
+                        InputProps={{
+                            style: {
+                                color: "rgba(240, 239, 244, 1)",
+                            }
+                        }}
                     />  
 
                     <Button 
@@ -72,9 +127,7 @@ function Register() {
                             width: "5vw",
                             backgroundColor: "rgba(146, 180, 167, 1)",
                         }}
-                    >
-                        Submit
-                    </Button>
+                    >Submit</Button>
                 </form>
 
                 <Link to="/log-in" className="log-register__link">Already having an account? Log in.</Link>
